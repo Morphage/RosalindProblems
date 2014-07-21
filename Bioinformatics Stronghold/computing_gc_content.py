@@ -30,7 +30,8 @@ if __name__ == '__main__':
         count = count_gc(fasta_id_sequences[id])
         fasta_id_sequences[id] = float(count * 100) / float(len(fasta_id_sequences[id]))
 
-    max_id = max(fasta_id_sequences.iterkeys(), key=(lambda key: fasta_id_sequences[key]))
+    #max_id = max(fasta_id_sequences.iterkeys(), key=(lambda key: fasta_id_sequences[key]))
+    max_id = max(fasta_id_sequences, key=fasta_id_sequences.get)
     
     print max_id
     print fasta_id_sequences[max_id]
